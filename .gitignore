@@ -2,6 +2,9 @@
 .zcode/
 .mimosa/
 
+# The founder's private brand blueprint; kept out of the repository
+/Zelva_Brand_and_Product_Blueprint.pdf
+
 # Editors and OS
 .idea/
 .vscode/
