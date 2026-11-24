@@ -1,0 +1,32 @@
+name: Documentation
+
+on:
+  pull_request:
+    paths:
+      - "*.md"
+      - "**/*.md"
+      - "scripts/docs-lint.mjs"
+      - ".github/workflows/docs.yml"
+  push:
+    branches: [master]
+    paths:
+      - "*.md"
+      - "**/*.md"
+      - "scripts/docs-lint.mjs"
+      - ".github/workflows/docs.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    name: Check identifiers and links
+    runs-on: ubuntu-latest
+    steps:
+      # Actions are pinned by commit. Update a pin by resolving the new tag
+      # to its commit and changing both the hash and the comment.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - run: node scripts/docs-lint.mjs
