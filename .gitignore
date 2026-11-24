@@ -1,0 +1,15 @@
+# Tool state
+.zcode/
+.mimosa/
+
+# Editors and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Build outputs
+target/
+node_modules/
+dist/
